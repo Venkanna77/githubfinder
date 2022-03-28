@@ -25,7 +25,7 @@ export const GithubProvider = ({ children }) => {
     });
 
     const response = await fetch(
-      `http://api.github.com/search/users?${params}`
+      `https://api.github.com/search/users?${params}`
     );
     const { items } = await response.json();
     dispatch({
@@ -38,7 +38,7 @@ export const GithubProvider = ({ children }) => {
   const getUser = useCallback(async (login) => {
     setloading();
 
-    const response = await fetch(`http://api.github.com/users/${login}`);
+    const response = await fetch(`https://api.github.com/users/${login}`);
 
     if (response.status === 404) {
       window.location = "/not found";
@@ -60,7 +60,7 @@ export const GithubProvider = ({ children }) => {
           per_page:10,
         });
 
-    const response = await fetch(`http://api.github.com/users/${login}/repos?${params}`);
+    const response = await fetch(`https://api.github.com/users/${login}/repos?${params}`);
 
     if (response.status === 404) {
       window.location = "/not found";
