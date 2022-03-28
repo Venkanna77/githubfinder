@@ -28,7 +28,7 @@ const UserSearch = () => {
               <input
                 type="text"
                 className="w-full pr-40 bg-gray-200 input input-lg text-black"
-                placeholder="search"
+                placeholder="enter username"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
               />
